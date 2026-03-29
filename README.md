@@ -4,47 +4,63 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## 📌 Project Overview
-This repository contains a comprehensive tutorial on **Gaussian Process Regression (GPR)**. The project demonstrates how to use Bayesian inference to forecast solar power generation while quantifying model uncertainty. 
+This repository contains a professional-standard tutorial on **Gaussian Process Regression (GPR)**. The project demonstrates how to use Bayesian inference to forecast solar power generation while quantifying model **Uncertainty**. 
 
-By fusing weather sensor data with power generation logs, we provide a robust framework for renewable energy prediction, specifically designed for Master's level Machine Learning coursework.
+Unlike standard "black-box" models, this GPR implementation provides a 95% confidence interval, allowing grid operators to manage risk and predict renewable energy yield more effectively.
 
-## 🚀 Key Features
-- **Technical Depth:** Implementation of optimized RBF and White Kernels via Log-Marginal Likelihood (LML).
-- **Data Synergy:** Merging of disparate time-series datasets (Generation + Weather).
-- **Visual Teaching:** 95% Confidence Interval visualization for predictive uncertainty.
-- **Accessibility:** High-contrast plots and modular, documented code.
+## 🚀 Key Technical Features
+- **Data Synergy:** Fusing weather sensor data (Irradiation) with power plant generation logs.
+- **Kernel Comparison:** Evaluating three different architectures (Simple RBF, Periodic, and Composite) to find the optimal fit.
+- **Hyperparameter Optimization:** Automatic tuning of length-scales and noise levels via Log-Marginal Likelihood (LML).
+- **Professional Workflow:** Automated data scaling, daytime filtering, and result visualization.
+
+## 📁 Project Structure
+```text
+ML-GPR-Solar-Tutorial/
+├── data/                   <-- Place Kaggle CSV files here
+├── output/                 <-- Auto-generated folder for plots
+├── main.py                 <-- The clean Python script version
+├── GPR_Tutorial.ipynb      <-- The interactive tutorial notebook
+├── Tutorial_Final.pdf      <-- The academic report
+├── README.md               <-- You are here
+├── requirements.txt        <-- Dependencies
+└── LICENSE                 <-- MIT License
+```
+
+## 📊 Visual Results
+The tutorial generates two primary comparative visualizations (saved in the `/output` folder):
+
+1. **Model Comparison:** Demonstrates why a Composite Kernel ($RBF + WhiteKernel$) is necessary to handle noisy solar data compared to basic kernels.
+2. **Final Forecast:** A professional-grade plot showing the mean prediction and the 95% Confidence Interval.
 
 ## 🛠️ Installation & Setup
-To run this tutorial locally, ensure you have Python 3.8+ installed.
-
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/charanlogs/ML-Solar-GPR-Tutorial.git
-   cd ML-Solar-GPR-Tutorial
-    ```
-    
+   git clone https://github.com/[Your-Username]/ML-GPR-Solar-Tutorial.git
+   cd ML-GPR-Solar-Tutorial
+   ```
+
 2. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Data Source:**
-   Download the [Solar Power Generation Data](https://www.kaggle.com/datasets/anikannal/solar-power-generation-data) from Kaggle and place `Plant_1_Generation_Data.csv` and `Plant_1_Weather_Sensor_Data.csv` in the data directory.
+3. **Prepare Data:**
+   Download the [Solar Power Generation Data](https://www.kaggle.com/datasets/anikannal/solar-power-generation-data) and place the CSV files into the `/data` folder.
 
-## 📊 Results
-The model effectively learns the non-linear relationship between irradiation and DC power. Below is the primary output of the GPR model:
+## ♿ Accessibility & Inclusive Design
+In compliance with the assignment rubric, this project emphasizes inclusivity:
+- **High-Contrast Plots:** We use a Blue/Gray/Red palette optimized for color-blind users (Protanopia/Deuteranopia).
+- **Clear Visual Coding:** We use distinct markers (dots) for raw data and solid lines for predictions, ensuring the graph is interpretable in black-and-white.
+- **Human-Readable Code:** Comments are written in simple, clear English to ensure the tutorial is a functional teaching tool for everyone.
 
-![GPR Plot](gpr_plot.png)
-
-## ♿ Accessibility Statement
-In compliance with the assignment rubric, this repository emphasizes inclusive design:
-- **Visuals:** Plots use high-contrast color schemes (Blue/Gray) and distinct markers for color-blind accessibility.
-- **Code:** Every function is commented, and variables are named descriptively for screen-reader clarity.
-- **Documentation:** This README provides text-based descriptions of all visual data trends.
-
-## ⚖️ License
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details. This allows for open-source re-use and academic review.
+## ⚖️ Ethical AI: Sustainability
+By choosing GPR (a "Shallow Learner") over massive Deep Learning models, we reduce the carbon footprint of our AI training process. This supports **Green AI** practices by providing a mathematically efficient solution for localized renewable energy tasks.
 
 ## 📚 References
-- Rasmussen, C. E., & Williams, C. K. I. (2006). *Gaussian Processes for Machine Learning*. MIT Press.
-- Pedregosa, F., et al. (2011). *Scikit-learn: Machine Learning in Python*. JMLR.
+1. **Rasmussen, C. E., & Williams, C. K. I. (2006).** *Gaussian Processes for Machine Learning*. MIT Press.
+2. **Pedregosa, F., et al. (2011).** *Scikit-learn: Machine Learning in Python*. JMLR.
+3. **Kaggle Dataset:** *Solar Power Generation Data* by Anivind Kanwal.
+
+## 📄 License
+This project is licensed under the **MIT License**.
